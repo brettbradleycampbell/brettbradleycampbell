@@ -1,0 +1,173 @@
+body {
+	margin: 0;
+	color: $font-color;
+	font-family: $body-font-family;
+	font-size: 1em;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	background-color: #ededed;
+	padding-top: 12em;
+}
+img {
+	max-width: 100%;
+}
+h1,
+h2,
+h3 {
+	font-weight: 600;
+	color: $heading-color;
+	font-family: $heading-font-family;
+	line-height: 1.5;
+}
+h1 {
+	color: $heading-color;
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 2em;
+	&.section-title {
+		font-size: 0.9em;
+		text-transform: uppercase;
+	}
+}
+a,
+a:visited {
+	color: $link-color;
+	text-decoration: underline;
+	&.underline-link {
+		-webkit-transition: color .1s;
+		transition: color .1s;
+		text-decoration: underline;
+	}
+}
+a:hover {
+	color: $link-hover-color;
+	&.underline-link {
+		text-decoration: none;
+	}
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+main, .container {
+	width: 85%;
+	max-width: $content-width;
+	margin: 0 auto;
+	@include media-query($medium-up) {
+		width: 85%;
+	}
+}
+main {
+	-webkit-animation: fadeInDelay 1s; /* Safari 4.0 - 8.0 */
+	animation: fadeInDelay 1s;
+}
+
+.name {
+	position: fixed;
+	top: -0.4em;
+	left: -0.1em;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 8em;
+	white-space: nowrap;
+	z-index: 2;
+	color: $link-hover-color;
+	@include media-query($large-up) {
+		top: -0.42em;
+		font-size: 10em;
+	}
+}
+
+.homepage-section {
+	margin-top: 80px;
+	p, ul {
+		margin: 0;
+		font-size: 1.1em;
+	}
+}
+p.bio-text {
+	font-size: 1.6em;
+    line-height: 1.4em;
+    max-width: 20em;
+    display: inline-block;
+	@include media-query($large-up) {
+		font-size: 2.1em;
+	}
+}
+
+.more-info {
+	border: 1px solid #000;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 40px;
+	text-transform: lowercase;
+	font-family: 'Source Serif Pro', sans-serif;
+	cursor: pointer;
+	margin-left: 14px;
+	font-size: 10px;
+	position: relative;
+	top: -2px;
+	text-decoration: none;
+	-webkit-transition: .2s all;
+	&:hover {
+		color: #fff;
+		border-color: $link-hover-color;
+		background-color: $link-hover-color;
+	}
+}
+
+.projects {
+	a {
+		text-decoration: none;
+		display: table; 
+	  	color: #000;
+	  	&:hover {
+	  		color: $link-hover-color;
+	  	}
+	  	// &.Branding,
+	  	// &.Website {
+	  	// 	color: #fff;
+	  	// }
+		span {
+			display: inline-block; // need this or the span won't transform
+			@include transition(color .2s, transform .4s);
+		}				
+		&:hover span {
+			@include transform(translate(.5em, 0));
+		}
+	}
+}
+
+.homepage-section.contact {
+	a {
+		display: inline-block;
+		span {
+			display: inline-block; // need this or the span won't transform
+			@include transition(color .2s, transform .4s);
+		}				
+		&:hover span {
+			@include transform(translate(.25em, 0));
+		}
+	}
+}
+
+.ui-widget.ui-widget-content {
+	@include media-query($small) {
+		background: #fff!important;
+		max-width: 180px!important;
+	}
+}
+
+footer {
+	margin: 12em 0 6em 0;
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+
+

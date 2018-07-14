@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<script>
+	$( function() {
+		$( document ).tooltip({
+			position: { my: "left+10 center", at: "right center" },
+		  	show: { effect: "blind", duration: 100 },
+		  	hide: { effect: "blind", duration: 100 }
+
+		}
+		);	
+	} );	
+</script>
+<style>
+.ui-tooltip{
+    font-size: .8em;
+    font-family: 'Inter UI', sans-serif;
+}
+.ui-widget.ui-widget-content {
+	border: none;
+	background: #ededed;
+	border-radius: 3px;
+	color: #000;
+	text-align: left;
+	max-width: none;
+}
+.ui-widget-shadow {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+</style>
+
+<div class="homepage-section">
+	<h2 class="name"><em>Brett Bradley Campbell</em></h2>
+</div>
+<div class="homepage-section">
+	<h2 class="section-title"><em>bio</em></h2>
+	<p class="bio-text">I'm a web designer and entrepreneur based in Salt Lake City, Utah. I'm best suited to projects that need branding, web design and development, graphic design, and creative marketing campaigns. <br><br>I'm open to freelance contract work and to collaborating on interesting projects. </p>
+</div>
+
+<div class="homepage-section">
+	<h2 class="section-title"><em>projects</em> <a class="more-info" title="I did the branding, design, and development on each of these projects. ">i</a></h2>
+	<ul class="projects">
+		<li><a href="http://getworkweek.com/" target="_blank"><span>Workweek</span></a></li>
+		<li><a href="https://ecotherapeutics.com/" target="_blank"><span>Ecotherapeutics</span></a></li>
+		<li><a href="https://betteressentials.com/" target="_blank"><span>Better Essentials</span></a></li>
+		<li><a href="{{ base.url }}/assets/jen-kane-workbook.pdf" target="_blank"><span>Jen Kane</span></a></li>
+		<li><a href="http://debthackr.brettbradleycampbell.com/" target="_blank"><span>DebtHackr</span></a></li>
+	</ul>
+</div>
+
+<div class="homepage-section contact">
+	<h2 class="section-title"><em>contact</em></h2>
+	<p>Email me at <a href="mailto:brettbradleycampbell@gmail.com"><span>brettbradleycampbell@gmail.com</span></a></p>
+</div>

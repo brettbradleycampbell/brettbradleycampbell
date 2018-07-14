@@ -1,0 +1,94 @@
+---
+layout: default
+class: post
+---
+
+<div class="grid client-description">
+	<div class="grid__item medium-up--one-half medium-up--push-one-tenth">
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.description }}</p>
+	</div>
+	<div class="grid__item medium-up--one-quarter medium-up--push-one-fifth">
+		<div class="client-services-hiding snappable">
+				<div class="secret-content">{{ page.secret-content }}</div>
+			<div class="client-services grabbable noselect">
+				<h3>Services</h3>
+				<ul>
+					{% for service in page.services %}
+					<li>{{ service }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{{ content }}
+
+{% capture the_collection %}{{page.collection}}{% endcapture %}
+{% if page.collection%}
+{% assign  document = site[the_collection] %}
+{% endif %}
+
+{% for pages in site.clients %}
+{% if page.path contains 'index' %}
+{% endif %}
+{% for links in document  %}
+  {% if links.title == page.title %}
+    {% unless forloop.first %}
+      {% assign prevurl = prev.url %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = document[forloop.index] %}
+      {% assign nexturl = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+{% endfor %}
+
+<!-- <script>
+document.body.onkeyup = function(e){
+if (e.keyCode == '37') { window.location = '{{prevurl}}'; }
+if (e.keyCode == '39') { window.location = '{{nexturl}}'; }
+};
+</script> -->
+<div class="container">
+	<center class="client-nav-buttons">
+		{% if page.order == 1 %}
+		<a href="/clients/workweek" class="prev"><</a>
+		{% endif %}
+		{% if prevurl %}
+			{% unless page.order == 4 %}
+			<a href="{{prevurl}}" class="prev"><</a>
+			{% endunless %}
+			{% if page.order == 4 %}
+			<a href="/clients/engel-volkers" class="prev"><</a>
+			{% endif %}
+		{% endif %}
+
+		<a href="{{ site.url }}/clients">back to clients</a>
+
+		{% if page.order == 6 %}
+		<a href="/clients/better-essentials" class="nxt">></a>
+		{% endif %}
+		{% if nexturl %}
+			{% unless page.order == 3 %}
+			<a href="{{nexturl}}" class="nxt">></a>
+			{% endunless %}
+			{% if page.order == 3 %}
+			<a href="/clients/jen-kane" class="nxt">></a>
+			{% endif %}
+		{% endif %}
+	</center>
+</div>
+
+
+
+<script>
+$( function() {
+$( ".grabbable" ).draggable({ 
+	snap: ".snappable",
+	snapTolerance: 2
+});
+} );
+</script>

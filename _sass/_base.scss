@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700');
+@import url('https://rsms.me/inter/inter-ui.css'); //Inter UI CDN
+
+$content-width: 1080px;
+$body-font-family: 'Inter UI', serif;
+$font-color: #28272b;
+$link-color: $font-color;
+$link-hover-color: #eab902;
+$heading-font-family: 'Inter UI', sans-serif;
+$heading-color: $font-color;
+
+$gray: #f0f1f2;
+
+$gutter: 20px;
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+} 
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+//box-shadow mixin
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $spread $color;
+    -moz-box-shadow:inset $top $left $blur $spread $color;
+    box-shadow:inset $top $left $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+//extra fun classes
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+
+@-webkit-keyframes mymove {
+    from {transform: translate(0, -.2em); color: $link-hover-color}
+    to {transform: translate(0, 0); color: $font-color}
+}
+@keyframes mymove {
+    from {transform: translate(0, -.2em); color: $link-hover-color}
+    to {transform: translate(0, 0); color: $font-color}
+}
+
+@-webkit-keyframes fadeInUp {
+    from {opacity: 0; transform: translate(0, .4em);}
+    to {opacity: 1; transform: translate(0, 0);}
+}
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translate(0, .4em);}
+    to {opacity: 1; transform: translate(0, 0);}
+}
+@-webkit-keyframes fadeInDown {
+    from {opacity: 0; transform: translate(0, -1em)}
+    to {opacity: 1; transform: translate(0, 0)}
+}
+@keyframes fadeInDown {
+    from {opacity: 0; transform: translate(0, -1em)}
+    to {opacity: 1; transform: translate(0, 0)}
+}
+@-webkit-keyframes fadeInDelay {
+    0% {opacity: 0}
+    25% {opacity: 0}
+    100% {opacity: 1}
+}
+@keyframes fadeInDelay {
+    0% {opacity: 0}
+    25% {opacity: 0}
+    100% {opacity: 1}
+}
+
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+} 
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
