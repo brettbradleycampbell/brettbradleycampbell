@@ -75,6 +75,7 @@ main {
 	white-space: nowrap;
 	z-index: 2;
 	color: $link-hover-color;
+	pointer-events: none;
 	@include media-query($large-up) {
 		top: -0.42em;
 		font-size: 10em;
