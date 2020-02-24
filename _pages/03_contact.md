@@ -1,13 +1,7 @@
 ---
 layout: page
-title: contact
-permalink: /contact
----
-
----
-layout: page
-title: payment canceled
-permalink: /canceled
+title: payment success
+permalink: /success
 ---
 
 
