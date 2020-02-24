@@ -4,6 +4,22 @@ title: contact
 permalink: /contact
 ---
 
+---
+layout: page
+title: payment canceled
+permalink: /canceled
+---
+
+
+<div class="homepage-about grid">
+	<div class="grid__item medium-up--three-quarters">
+		<h2 class="about-large">Thank you for your payment!</h2>
+	</div>
+</div>
+
+
+
+<!--
 <form accept-charset="UTF-8" action="https://saintmaverick.wufoo.com/forms/s15awgi11khnj32/#public" autocomplete="off" class="wufoo topLabel page" enctype="multipart/form-data" id="form5" method="post" name="form5" novalidate="">
 	<ul>
 		<li class="notranslate" id="foli12">
@@ -52,4 +68,4 @@ permalink: /contact
 
 Email us at [info@saintmaverick.co](mailto:brettbradleycampbell@gmail.com)
 
-<style>footer form.wufoo {display: none;}</style>
+<style>footer form.wufoo {display: none;}</style> -->
